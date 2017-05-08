@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Blog CodeIgniter</title>
+	<title>Blog Paradox CodeIgniter</title>
 	<!--link rel="stylesheet" type="text/css" href="<?php //echo base_url("assets/bootstrap.css");?>"-->
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/bootswatch_sandstone.css");?>">
@@ -8,7 +8,6 @@
 </head>
 <body>
 <nav class="navbar navbar-inverse">
-
 	<div class="container">
 		<div class="navbar-header">
 			<a class="navbar-brand" href="<?php base_url();?>">Website Name</a>
@@ -21,7 +20,8 @@
 			</ul>
 		</div>
 	</div>
-	
 </nav>
 
 <div class="container">
+
+

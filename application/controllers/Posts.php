@@ -2,11 +2,16 @@
 
 class Posts extends CI_Controller{
 
-	
+	function __construct(){
+		parent::__construct();
+
+		$this->load->model('Posts_model');
+	}
+
 	public function index(){
 		
 		$data['title'] = 'Latest Post';
-		$this->load->model('Posts_model');
+		//$this->load->model('Posts_model');
 
 		$data['posts'] = $this->Posts_model->get_posts(); 
 
@@ -16,17 +21,17 @@ class Posts extends CI_Controller{
 	}
 
 	public function view($slug = NULL){
-		$data['posts'] = $this->post_model->get_posts($slug);
+		//$this->load->model('Posts_model');
+		$data['post'] = $this->Posts_model->get_posts($slug);
 
-		if(empty($data['posts'])){
+		if(empty($data['post'])){
 			show_404();
 		}
 
-		$data['title'] = $data['posts']['title'];
+		$data['title'] = $data['post']['title'];
 
 		$this->load->view('templates/header');
 		$this->load->view('posts/view',$data);
 		$this->load->view('templates/footer');
-
 	}
 }
