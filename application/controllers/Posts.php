@@ -48,6 +48,21 @@ class Posts extends CI_Controller{
 		}		
 	}
 
+	public function edit($id){
+		$data['post'] = $this->Posts_model->edit_posts($id);
+
+		if(empty($data['post'])){
+			echo 'empty';
+		}
+
+		$data['title'] = "Edit Title";
+
+			$this->load->view('templates/header');
+			$this->load->view('posts/edit',$data);
+			$this->load->view('templates/footer');	
+		
+	}
+
 }
 
 
