@@ -20,3 +20,5 @@
 &nbsp;
 <a href="<?php echo base_url('');?>posts/edit/<?php echo $post['id'];?>" class="btn btn-default">Edit Post</a>
 
+
+

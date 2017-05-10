@@ -48,6 +48,11 @@ class Posts extends CI_Controller{
 		}		
 	}
 
+	public function delete($id){
+		$this->Posts_model->delete_posts($id);
+		redirect('posts');
+	}
+
 	public function edit($id){
 		$data['post'] = $this->Posts_model->edit_posts($id);
 
@@ -60,8 +65,12 @@ class Posts extends CI_Controller{
 			$this->load->view('templates/header');
 			$this->load->view('posts/edit',$data);
 			$this->load->view('templates/footer');	
-		
 	}
+
+	public function update(){
+		$this->Posts_model->update_posts();
+		redirect('posts');
+	}	
 
 }
 

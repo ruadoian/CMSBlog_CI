@@ -20,6 +20,7 @@ echo validation_errors();
 	<div class="form-group">
 		<?php
 			$body = array(
+			'id'			=> 'editor1',
 			'name' 			=> 'body',
 			'placeholder' 	=> 'Body',
 			'class' 		=> 'form-control'
