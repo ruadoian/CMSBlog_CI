@@ -19,7 +19,8 @@ class Posts_model extends CI_Model{
 		$data = array(
 			'title' => $this->input->post('title'),
 			'slug' 	=> $slug,
-			'body'	=> $this->input->post('body')
+			'body'	=> $this->input->post('body'),
+			'categories' => $this->input->posts('category_id')
 			);
 
 		return $this->db->insert('posts',$data);
@@ -47,5 +48,12 @@ class Posts_model extends CI_Model{
 
 		$this->db->where('id', $this->input->post('id'));
 		return $this->db->update('posts',$data);
+	}
+
+	public function get_categories(){
+		$this->db->order_by('name');
+		$query = $this->db->get('categories');
+		return $query->result_array();
+		//echo "CATEGORIES";
 	}
 }

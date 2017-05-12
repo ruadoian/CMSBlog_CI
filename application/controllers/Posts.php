@@ -34,9 +34,11 @@ class Posts extends CI_Controller{
 
 	public function create(){
 		$data['title'] = 'Create Post';
-
+		$data['categories'] = $this->Posts_model->get_categories();
+		//var_dump($data['categories']);
 		$this->form_validation->set_rules('title','Title','required');
 		$this->form_validation->set_rules('body','Body','required');
+		$this->form_validation->set_rules('category_id','Category','required');
 
 		if($this->form_validation->run() === FALSE){
 			$this->load->view('templates/header');

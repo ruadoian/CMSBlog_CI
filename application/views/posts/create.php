@@ -28,6 +28,15 @@ echo validation_errors();
 			echo form_textarea($body);
 		?>
 	</div>
+	<div class="form-group">
+		<label>Category</label>
+		<select name="category_id" class="form-control">
+			<?php foreach($categories as $key):?>
+				<option value="$key['name']"><?php echo $key['name']?></span>
+				</option>
+			<?php endforeach;?>	
+		</select>
+	</div>
 
 	<div class="form-group">
 		<?php
@@ -38,5 +47,9 @@ echo validation_errors();
 		echo form_submit($button,'Create Posts');
 		?>	
 	</div>
+
+
 	
 <?php echo form_close();?>
+
+
