@@ -34,6 +34,16 @@ echo validation_errors();
 	</div>
 
 	<div class="form-group">
+		<label>Category</label>
+		<select name="category_id" class="form-control">
+			<?php foreach($categories as $key):?>
+				<option value="$key['id']"><?php echo $key['name']?></span>
+				</option>
+			<?php endforeach;?>	
+		</select>
+	</div>
+
+	<div class="form-group">
 		<?php
 		$button = array(
 			'type' 			=> 'submit',

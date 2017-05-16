@@ -3,12 +3,13 @@
 	<title>Blog Paradox CodeIgniter</title>
 	<!--link rel="stylesheet" type="text/css" href="<?php //echo base_url("assets/bootstrap.css");?>"-->
 
-	<!--link rel="stylesheet" type="text/css" href="<?php //echo base_url("assets/css/bootswatch_sandstone.css");?>"-->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/bootswatch_sandstone.css");?>">
+	<!--link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css"-->
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/stiles.css")?>">
 
-	<!--link rel="stylesheet" type="text/css" href="<?php //echo base_url("assets/ckeditor/ckeditor.js")?>"-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/ckeditor-full.js")?>">
+
 	
 	<script src="http://cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
 
@@ -24,9 +25,11 @@
 				<li><a href="<?php echo base_url();?>home">Home</a></li>
 				<li><a href="<?php echo base_url();?>about">About</a></li>
 				<li><a href="<?php echo base_url();?>posts">Blogs</a></li>
+				<li><a href="<?php echo base_url();?>categories">Categories</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 			<li><a href="<?php echo base_url();?>posts/create">Create Posts</a></li>
+			<li><a href="<?php echo base_url();?>categories/create">Add Category</a></li>
 			</ul>
 		</div>
 	</div>

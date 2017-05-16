@@ -20,5 +20,29 @@
 &nbsp;
 <a href="<?php echo base_url('');?>posts/edit/<?php echo $post['id'];?>" class="btn btn-default">Edit Post</a>
 
+<?php echo validation_errors();?>
+<hr>
+<h3>Add Comment</h3>
+<?php echo form_open('comments/create/'.$post['id']);?>
+	<div class="form-group">
+		<label>Name</label>
+		<input type="input" class="form-control" name="name">
+	</div>
 
+	<div class="form-group">
+		<label>Email Address</label>
+		<input type="email" class="form-control" name="email">
+	</div>
 
+	<div class="form-group">
+		<label>Comment</label>
+		<textarea name="body" class="form-control"></textarea>
+	</div>
+
+	<input type="hidden" name="slug" value="<?php echo $post['slug']?>">
+
+	<div class="form-group">
+		<button class="btn btn-info" type="submit">Submit Comment</button>
+	</div>
+
+<?php echo form_close();?>

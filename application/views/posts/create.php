@@ -1,7 +1,7 @@
 <h2><?= $title; ?></h2>
 
 <?php 
-echo form_open('posts/create');
+echo form_open_multipart('posts/create');
 echo validation_errors();
 ?>
 
@@ -32,10 +32,23 @@ echo validation_errors();
 		<label>Category</label>
 		<select name="category_id" class="form-control">
 			<?php foreach($categories as $key):?>
-				<option value="$key['name']"><?php echo $key['name']?></span>
+				<option value="<?php echo $key['id'];?>"><?php echo $key['name']?></span>
 				</option>
 			<?php endforeach;?>	
 		</select>
+	</div>
+
+	<div class="form-group">
+		<label>Upload Image</label>
+		<?php
+		$image = array(
+			'type' => 'file',
+			'name' => 'userfile',
+			'size' => '20',
+			
+			);
+		echo form_input($image);
+		?>
 	</div>
 
 	<div class="form-group">
