@@ -1,16 +1,13 @@
 <html>
 <head>
 	<title>Blog Paradox CodeIgniter</title>
-	<!--link rel="stylesheet" type="text/css" href="<?php //echo base_url("assets/bootstrap.css");?>"-->
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/bootswatch_sandstone.css");?>">
-	<!--link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css"-->
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/stiles.css")?>">
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/ckeditor-full.js")?>">
 
-	
 	<script src="http://cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
 
 </head>

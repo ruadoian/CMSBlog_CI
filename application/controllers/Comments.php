@@ -1,11 +1,8 @@
 <?php
-
 class Comments extends CI_Controller{
 	
-
 	function __construct(){
 		parent::__construct();
-
 		$this->load->model('comments_model');
 		$this->load->model('Posts_model');
 	}
@@ -15,8 +12,8 @@ class Comments extends CI_Controller{
 		$data['post'] = $this->Posts_model->get_posts($slug);
 
 		$this->form_validation->set_rules('name','Name','required');
-		$this->form_validation->set_rules('email','Email','required');
-		$this->form_validation->set_rules('email','Email','valid_email');
+		$this->form_validation->set_rules('email','Email','required', 'valid_email');
+		//$this->form_validation->set_rules('email','Email','valid_email');
 		$this->form_validation->set_rules('body','Body','required');
 
 		if($this->form_validation->run() === FALSE){

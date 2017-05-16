@@ -6,12 +6,14 @@ class Posts extends CI_Controller{
 		parent::__construct();
 
 		$this->load->model('Posts_model');
+		$this->load->model('comments_model');
 	}
 
 	public function index(){
 		$data['title'] = 'Latest Post';
 
-		$data['posts'] = $this->Posts_model->get_posts(); 
+		$data['posts'] = $this->Posts_model->get_posts();
+
 
 		$this->load->view('templates/header');
 		$this->load->view('posts/index',$data);
@@ -20,6 +22,8 @@ class Posts extends CI_Controller{
 
 	public function view($slug = NULL){
 		$data['post'] = $this->Posts_model->get_posts($slug);
+		$post_id = $data['post']['id'];
+		$data['comments'] = $this->comments_model->get_comments($post_id);
 
 		if(empty($data['post'])){
 			show_404();

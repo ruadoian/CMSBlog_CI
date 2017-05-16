@@ -22,6 +22,24 @@
 
 <?php echo validation_errors();?>
 <hr>
+	
+	<h3>Comments</h3>
+	<?php if($comments):?>
+		<?php foreach($comments as $key):?>
+			<div class="well">
+			
+			<h5>
+			<small>Date Posted: <?php echo $key['created_at'];?></small><br>
+			<b><i>From: </i></b><?php echo $key['email'];?>
+			<br>
+			<i>"<?php echo $key['body'];?>"</i>
+			</h5>
+			</div>
+		<?php endforeach;?>
+	<?php else:?>
+		<p>There are no comments yet.</p>
+	<?php endif;?>
+<h3>
 <h3>Add Comment</h3>
 <?php echo form_open('comments/create/'.$post['id']);?>
 	<div class="form-group">
